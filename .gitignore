@@ -1,0 +1,2 @@
+#This class contains files which we do not want to send to git
+target/

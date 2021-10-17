@@ -1,0 +1,28 @@
+What did we learn from previous class
+- We created some reusable support classes under utilities package
+-- Driver
+-- ConfigReader
+
+* Driver : We use this class from now on instead of TestBase
+    - Our Driver class is "singleton" driver class
+    - By also using configuration.properties and of course ConfigReader we can select browser.
+    - So we add switch and create the relevant browser driver via Driver class.
+   From now on==>  we just use "Driver.getDriver()," instead of "driver."
+   - We use "static" in Driver class so that we can use the class across the whole framework globally.
+   - We use "static" in ConfigReader class so that we can use the class across the whole framework globally also.
+
+* configuration.properties : the file store most major test data
+* ConfigReader : we read configuration.properties via this class
+    - First we create configuration.properties under the top project
+    - We create ConfigReader class to be able to read/load the configuration.properties
+    - We can call many
+        - url
+        - browser
+        - app_url
+        - user_name
+        - password
+ ---- We make the test cases dynamic (not hard coded) with ConfigReader.
+***target folder is created by compiler whenever we run tests.
+
+* pom.xml -- (project object model) - the most important file in Maven project.
+We add dependencies, properties, plugins and profiles
