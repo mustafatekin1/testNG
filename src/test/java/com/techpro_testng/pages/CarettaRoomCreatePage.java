@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class CarettaRoomCreatePage {
 
     public CarettaRoomCreatePage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -32,7 +33,32 @@ public class CarettaRoomCreatePage {
     @FindBy(xpath = "//li[@data-id='500']")
     public WebElement price500;
 
+    @FindBy(id="IDGroupRoomType")
+    public WebElement roomTypeDropdown;
 
+    @FindBy(id="MaxAdultCount")
+    public WebElement maxAdultCount;
+
+    @FindBy(id="MaxChildCount")
+    public WebElement maxChildrenCount;
+
+    @FindBy(id="IsAvailable")
+    public WebElement isApprovedCheckbox;
+
+    @FindBy(id="btnSubmit")
+    public WebElement saveButton;
+
+    @FindBy(xpath="//div[@class='bootbox-body']")
+    public WebElement popupMessage;
+
+    @FindBy(xpath="//button[@data-bb-handler='ok']")
+    public WebElement okButton;
+
+
+    @FindBy(xpath = "//li[@data-id='700']")
+    public WebElement price700;
+    //LOCATE ALL OBJECTS IN THIS CLASS
+    //AND
 
 
 

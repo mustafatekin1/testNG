@@ -1,4 +1,13 @@
 What did we learn from previous class
+-- POM: page object model is a design pattern to create reusable,
+more readable and easy to fix testing framework.
+How:?
+    - We seperate assertion codes(testing codes) and other supporting codes so that we have a clean
+ testing class.
+    - Other supporting classes/packages are such as
+    Driver class, configuration.properties, ConfigReader, pages ...
+
+PageFactory: is used to instantiate page objects in the page classes
 - We created some reusable support classes under utilities package
 -- Driver
 -- ConfigReader

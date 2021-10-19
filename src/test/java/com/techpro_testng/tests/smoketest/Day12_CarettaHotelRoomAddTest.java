@@ -5,8 +5,11 @@ import com.techpro_testng.pages.*;
 import com.techpro_testng.utilities.ConfigReader;
 import com.techpro_testng.utilities.Driver;
 import org.checkerframework.checker.units.qual.A;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -71,22 +74,51 @@ public class Day12_CarettaHotelRoomAddTest {
         carettaRoomCreatePage.location.sendKeys(faker.address().city());
         carettaRoomCreatePage.textarea.sendKeys(faker.shakespeare().hamletQuote());
 
-        //carettaRoomCreatePage.price.sendKeys(faker.number().digits(3));
+        carettaRoomCreatePage.price.sendKeys(faker.number().digits(3));
         Thread.sleep(3000);
         // drag and drop option for the price -- 500
         Actions actions = new Actions(Driver.getDriver());
         actions.dragAndDrop(carettaRoomCreatePage.price500, carettaRoomCreatePage.price).perform();
         Thread.sleep(3000);
 
+        //Room Type
+        Select roomTypeDropdown = new Select(carettaRoomCreatePage.roomTypeDropdown);
+        roomTypeDropdown.selectByVisibleText("Studio");
+
+        //Adult
+        carettaRoomCreatePage.maxAdultCount.sendKeys(faker.number().digit());
+
+        //Child
+        carettaRoomCreatePage.maxChildrenCount.sendKeys(faker.number().digits(1));
+
+        //approved
+        carettaRoomCreatePage.isApprovedCheckbox.click();
+
+        //save
+        carettaRoomCreatePage.saveButton.click();
 
 
+        //ASSERTION FAILS CAUSE WINDOW POP UP TAKES SOME TIME TO OPEN-less than a sec
+        //synchronization ISSUE
 
+        //WAY 1- Thread.sleep(1000)- not recommended
+        //WAY 2- Explicit Wait
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        WebElement popupElement = wait.until(ExpectedConditions.visibilityOf(carettaRoomCreatePage.popupMessage));
+
+        //Verify the message: HotelRoom was inserted successfully
+        //Asserting message
+        Assert.assertEquals(popupElement.getText(),"HotelRoom was inserted successfully");
+Thread.sleep(3000);
+        //Click OK
+        carettaRoomCreatePage.okButton.click();
 
     }
 
     @AfterMethod
-    public void teardown(){
-    Driver.closeDriver();
+    public void teardown() throws InterruptedException {
+        Thread.sleep(3000);
+        Driver.closeDriver();
     }
 
 
