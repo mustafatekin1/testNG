@@ -1,0 +1,9 @@
+Steps for automation:
+1. Prepare the test data:
+- Add url and the necessary data into the configuration.properties
+- Add the excel sheet prepared for the test
+2. Create automation scripts
+-- Java Class: LoginSmokeTest
+-- methods:
+    - adminLoginTest
+    - managerLoginTest

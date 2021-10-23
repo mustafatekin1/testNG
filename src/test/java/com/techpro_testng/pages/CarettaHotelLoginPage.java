@@ -24,4 +24,10 @@ public class CarettaHotelLoginPage {
     @FindBy(id="divMessageResult")
     public WebElement errorMessage;
 
+    @FindBy(id="details-button")
+    public WebElement advanced;
+
+    @FindBy(id="proceed-link")
+    public WebElement proceedLink;
+
 }
