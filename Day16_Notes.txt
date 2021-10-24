@@ -1,0 +1,6 @@
+DataProvider is an annotation of TestNG. We use DataProvider again as ExcelUtil to get data
+It is used to provide data to the Test Cases
+The return type is 2D array
+There are 2 parameter we can pass. OPTIONAL.
+name    : used for assigning custom method name
+parallel :used for parallel testing

@@ -20,7 +20,7 @@ public class JSUtils {
         jsexecutor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
     //Scroll into view with JS. THIS IS VERY USEFULL
-    public static void scrollIntoVIewJS(WebElement element) {
+    public static void scrollIntoViewJS(WebElement element) {
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
