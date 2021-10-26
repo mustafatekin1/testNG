@@ -4,7 +4,6 @@ import com.github.javafaker.Faker;
 import com.techpro_testng.pages.*;
 import com.techpro_testng.utilities.ConfigReader;
 import com.techpro_testng.utilities.Driver;
-import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,18 +29,18 @@ public class Day12_CarettaHotelRoomAddTest {
 
     //declare the objects in the class level
 
-    CarettaHotelMainPage carettaHotelMainPage;
-    CarettaHotelLoginPage carettaHotelLoginPage;
-    CarettaHotelDefaultPage carettaHotelDefaultPage;
+    MainPage carettaHotelMainPage;
+    LoginPage carettaHotelLoginPage;
+    DefaultPage carettaHotelDefaultPage;
     CarettaHotelRoomsPage carettaHotelRoomsPage;
     CarettaRoomCreatePage carettaRoomCreatePage;
 
     @BeforeMethod
     public void setup(){
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
-        carettaHotelMainPage = new CarettaHotelMainPage();
-        carettaHotelLoginPage = new CarettaHotelLoginPage();
-        carettaHotelDefaultPage = new CarettaHotelDefaultPage();
+        carettaHotelMainPage = new MainPage();
+        carettaHotelLoginPage = new LoginPage();
+        carettaHotelDefaultPage = new DefaultPage();
 
         carettaHotelMainPage.loginButton.click();
         carettaHotelLoginPage.userName.sendKeys(ConfigReader.getProperty("manager_username"));

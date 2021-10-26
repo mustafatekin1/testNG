@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CarettaHotelDefaultPage {
+public class DefaultPage {
 // 1 create constructor
 
-    public CarettaHotelDefaultPage() {
+    public DefaultPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -22,6 +22,7 @@ public class CarettaHotelDefaultPage {
     @FindBy(xpath = "//a[@href='/admin/HotelRoomAdmin']")
     public WebElement hotelRoomsTab;
 
-
+    @FindBy(xpath = "//span[@class='username username-hide-on-mobile']")
+    public WebElement userId;
 
 }

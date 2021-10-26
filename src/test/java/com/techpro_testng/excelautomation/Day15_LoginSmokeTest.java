@@ -1,12 +1,11 @@
 package com.techpro_testng.excelautomation;
 
-import com.techpro_testng.pages.CarettaHotelDefaultPage;
-import com.techpro_testng.pages.CarettaHotelLoginPage;
+import com.techpro_testng.pages.DefaultPage;
+import com.techpro_testng.pages.LoginPage;
 import com.techpro_testng.utilities.ConfigReader;
 import com.techpro_testng.utilities.Driver;
 import com.techpro_testng.utilities.ExcelUtil;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -18,15 +17,15 @@ public class Day15_LoginSmokeTest {
 
     List<Map<String, String>> testData;// list of map of strings!!!
 
-    CarettaHotelLoginPage carettaHotelLoginPage;
-    CarettaHotelDefaultPage carettaHotelDefaultPage;
+    LoginPage carettaHotelLoginPage;
+    DefaultPage carettaHotelDefaultPage;
 
 
     public void setUp(){
 
         Driver.getDriver().get(ConfigReader.getProperty("app_qa_environment"));
-        carettaHotelLoginPage = new CarettaHotelLoginPage();
-        carettaHotelDefaultPage = new CarettaHotelDefaultPage();
+        carettaHotelLoginPage = new LoginPage();
+        carettaHotelDefaultPage = new DefaultPage();
 
         try {
             carettaHotelLoginPage.advanced.click();

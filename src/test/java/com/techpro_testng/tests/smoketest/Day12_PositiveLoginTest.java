@@ -1,8 +1,8 @@
 package com.techpro_testng.tests.smoketest;
 
-import com.techpro_testng.pages.CarettaHotelDefaultPage;
-import com.techpro_testng.pages.CarettaHotelLoginPage;
-import com.techpro_testng.pages.CarettaHotelMainPage;
+import com.techpro_testng.pages.DefaultPage;
+import com.techpro_testng.pages.LoginPage;
+import com.techpro_testng.pages.MainPage;
 import com.techpro_testng.utilities.ConfigReader;
 import com.techpro_testng.utilities.Driver;
 import org.testng.Assert;
@@ -26,8 +26,8 @@ verify login is successful
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
 
         // We need to create objects from the relevanr page classes
-        CarettaHotelMainPage carettaHotelMainPage = new CarettaHotelMainPage();
-        CarettaHotelLoginPage carettaHotelLoginPage = new CarettaHotelLoginPage();
+        MainPage carettaHotelMainPage = new MainPage();
+        LoginPage carettaHotelLoginPage = new LoginPage();
 
         carettaHotelMainPage.loginButton.click();
 
@@ -40,7 +40,7 @@ verify login is successful
         -  any core element : account name, add user button
         -  title
         */
-        CarettaHotelDefaultPage carettaHotelDefaultPage = new CarettaHotelDefaultPage();
+        DefaultPage carettaHotelDefaultPage = new DefaultPage();
         boolean isAddUserButton = carettaHotelDefaultPage.addUserButton.isDisplayed();
         Assert.assertTrue(isAddUserButton);
 

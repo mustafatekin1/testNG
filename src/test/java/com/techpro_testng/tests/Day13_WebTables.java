@@ -47,18 +47,18 @@ Create a test method: printData(int row, int column); This method should print t
 
   */
 
-    CarettaHotelMainPage carettaHotelMainPage;
-    CarettaHotelLoginPage carettaHotelLoginPage;
-    CarettaHotelDefaultPage carettaHotelDefaultPage;
+    MainPage carettaHotelMainPage;
+    LoginPage carettaHotelLoginPage;
+    DefaultPage carettaHotelDefaultPage;
     CarettaHotelRoomsPage carettaHotelRoomsPage;
 
     CarettaTablePage carettaTablePage;
 @BeforeMethod
 public void setup(){
     Driver.getDriver().get(ConfigReader.getProperty("app_url"));
-    carettaHotelMainPage = new CarettaHotelMainPage();
-    carettaHotelLoginPage = new CarettaHotelLoginPage();
-    carettaHotelDefaultPage = new CarettaHotelDefaultPage();
+    carettaHotelMainPage = new MainPage();
+    carettaHotelLoginPage = new LoginPage();
+    carettaHotelDefaultPage = new DefaultPage();
 
     carettaHotelMainPage.loginButton.click();
     carettaHotelLoginPage.userName.sendKeys(ConfigReader.getProperty("manager_username"));

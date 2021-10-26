@@ -1,7 +1,7 @@
 package com.techpro_testng.tests.smoketest;
 
-import com.techpro_testng.pages.CarettaHotelLoginPage;
-import com.techpro_testng.pages.CarettaHotelMainPage;
+import com.techpro_testng.pages.LoginPage;
+import com.techpro_testng.pages.MainPage;
 import com.techpro_testng.utilities.ConfigReader;
 import com.techpro_testng.utilities.Driver;
 import org.testng.Assert;
@@ -22,10 +22,10 @@ we have 3 negative scenarios
     @Test
     public void invalidPassword() throws InterruptedException {
        Driver.getDriver().get(ConfigReader.getProperty("app_url"));
-        CarettaHotelMainPage carettaHotelMainPage = new CarettaHotelMainPage();
+        MainPage carettaHotelMainPage = new MainPage();
         carettaHotelMainPage.loginButton.click();
 
-        CarettaHotelLoginPage carettaHotelLoginPage = new CarettaHotelLoginPage();
+        LoginPage carettaHotelLoginPage = new LoginPage();
         carettaHotelLoginPage.userName.sendKeys(ConfigReader.getProperty("manager_username"));
         //carettaHotelLoginPage.password.sendKeys("Test");
         carettaHotelLoginPage.password.sendKeys(ConfigReader.getProperty("wrong_manager_password"));
@@ -46,8 +46,8 @@ we have 3 negative scenarios
     @Test
     public void invalidId (){
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
-        CarettaHotelMainPage carettaHotelMainPage = new CarettaHotelMainPage();
-        CarettaHotelLoginPage carettaHotelLoginPage = new CarettaHotelLoginPage();
+        MainPage carettaHotelMainPage = new MainPage();
+        LoginPage carettaHotelLoginPage = new LoginPage();
 
         carettaHotelMainPage.loginButton.click();
         //carettaHotelLoginPage.userName.sendKeys("wrong");
@@ -68,8 +68,8 @@ we have 3 negative scenarios
     public void invalidPasswordAndId (){
 
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
-        CarettaHotelMainPage carettaHotelMainPage= new CarettaHotelMainPage();
-        CarettaHotelLoginPage carettaHotelLoginPage = new CarettaHotelLoginPage();
+        MainPage carettaHotelMainPage= new MainPage();
+        LoginPage carettaHotelLoginPage = new LoginPage();
 
         carettaHotelMainPage.loginButton.click();
 
