@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Caretta-Test-Suite">
+    <test name="test-set-1">
+        <classes>
+            <class name="com.techproed.tests.Day13_WebTables">
+                <methods>
+                    <include name="printRows"></include>
+                </methods>
+                <methods>
+                    <include name="printCells"></include>
+                </methods>
+            </class>
+
+            <class name="com.techproed.tests.smoketest.Day12_NegativeLoginTest">
+                <methods>
+                    <include name="invalidId"></include>
+                </methods>
+            </class>
+            <!--Up to now we run 3 different methods   -->
+
+            <class name="com.techproed.tests.Day10_TestNG_Annotation">
+                <methods>
+                    <exclude name="test4"></exclude>
+                    <!--Runs all tests except test4 from the class Day10_TestNG_Annotation-->
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
+
